@@ -1,7 +1,7 @@
 # svg-highlight
+![Build](https://img.shields.io/github/workflow/status/robinsimonklein/svg-highlight/Quality)
 [![Version](https://img.shields.io/npm/v/svg-highlight)](https://www.npmjs.com/package/svg-highlight)
 [![Size](https://img.shields.io/bundlephobia/min/svg-highlight)](https://bundlephobia.com/package/svg-highlight)
-![Build](https://img.shields.io/github/workflow/status/robinsimonklein/svg-highlight/Quality)
 [![Issues](https://img.shields.io/github/issues/robinsimonklein/svg-highlight)](https://github.com/robinsimonklein/svg-highlight/issues)
 [![Licence](https://img.shields.io/github/license/robinsimonklein/svg-highlight)](https://github.com/robinsimonklein/svg-highlight/blob/main/LICENSE)
 
@@ -12,9 +12,13 @@ Since SVG uses the order of DOM elements during the drawing stage, those at the 
 It can be used i.e. to show complete stroke of an highlighted element.
 
 ## Installation
-
+Using npm :
 ```shell
 npm install svg-highlight
+```
+Using yarn :
+```shell
+yarn add svg-highlight
 ```
 
 ## Usage
@@ -27,10 +31,11 @@ svgHighlight(yourSvgElement);
 ```
 
 ### Options
-
-- customClass
+You can pass some options for advanced usage :
 ```javascript
 svgHighlight(yourSvgElement, {
+    // The class you want to use one the highlighted element.
+    // (default: 'svg-highlight')
     customClass: 'my-highlighted-class'
 })
 ```
