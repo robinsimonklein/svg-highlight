@@ -8,7 +8,7 @@
     "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1",
     "size": "npm run build && size-limit",
-    "prepublish": "npm run build"
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
