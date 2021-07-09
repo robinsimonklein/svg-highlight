@@ -6,6 +6,7 @@
   "module": "src/index.js",
   "scripts": {
     "build": "rollup -c",
+    "lint": "eslint src/*.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "size": "npm run build && size-limit",
     "prepare": "npm run build"
@@ -34,6 +35,11 @@
   ],
   "devDependencies": {
     "@size-limit/preset-small-lib": "^5.0.1",
+    "eslint": "^7.30.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
     "rollup": "^2.53.0",
     "size-limit": "^5.0.1"
   }
