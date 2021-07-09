@@ -11,7 +11,7 @@ A tiny js tool to highlight an SVG element, that acts like a `z-index: +1`.
 Since SVG uses the order of DOM elements during the drawing stage, those at the same level overlap. 
 It can be used i.e. to show complete stroke of an highlighted element.
 
-## Installation
+## ⚙️ Installation
 Using npm :
 ```shell
 npm install svg-highlight
@@ -21,7 +21,7 @@ Using yarn :
 yarn add svg-highlight
 ```
 
-## Usage
+## ✨ Usage
 
 ```javascript
 import svgHighlight from "svg-highlight";
@@ -40,6 +40,6 @@ svgHighlight(yourSvgElement, {
 })
 ```
 
-## Credits
+## 👨‍💻 Credits
 
 © Robin Simonklein
