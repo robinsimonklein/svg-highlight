@@ -1,0 +1,40 @@
+{
+  "name": "svg-highlight",
+  "version": "1.0.0",
+  "description": "A tiny js tool to highlight an SVG element.",
+  "main": "index.js",
+  "module": "src/index.js",
+  "scripts": {
+    "build": "rollup -c",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "size": "npm run build && size-limit",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robinsimonklein/svg-highlight.git"
+  },
+  "keywords": [
+    "svg",
+    "hightlight",
+    "svg-hightlight",
+    "dom"
+  ],
+  "author": "Robin Simonklein",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robinsimonklein/svg-highlight/issues"
+  },
+  "homepage": "https://github.com/robinsimonklein/svg-highlight#readme",
+  "size-limit": [
+    {
+      "limit": "300 B",
+      "path": "index.js"
+    }
+  ],
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^5.0.1",
+    "rollup": "^2.53.0",
+    "size-limit": "^5.0.1"
+  }
+}
