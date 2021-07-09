@@ -1,6 +1,7 @@
 # svg-highlight
 [![Version](https://img.shields.io/npm/v/svg-highlight)](https://www.npmjs.com/package/svg-highlight)
 [![Size](https://img.shields.io/bundlephobia/min/svg-highlight)](https://bundlephobia.com/package/svg-highlight)
+![Build](https://img.shields.io/github/workflow/status/robinsimonklein/svg-highlight/Quality)
 [![Issues](https://img.shields.io/github/issues/robinsimonklein/svg-highlight)](https://github.com/robinsimonklein/svg-highlight/issues)
 [![Licence](https://img.shields.io/github/license/robinsimonklein/svg-highlight)](https://github.com/robinsimonklein/svg-highlight/blob/main/LICENSE)
 
