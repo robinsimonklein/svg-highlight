@@ -1,7 +1,7 @@
 module.exports = {
-    "extends": "standard",
+  extends: 'standard',
 
-    "env": {
-        "jest": true
-    }
-};
+  env: {
+    jest: true
+  }
+}
