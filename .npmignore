@@ -2,6 +2,7 @@
 .gitignore
 .npmignore
 .editorconfig
+.github
 
 node_modules/
 npm-debug.log
