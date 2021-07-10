@@ -42,4 +42,4 @@ svgHighlight(yourSvgElement, {
 
 ## 👨‍💻 Credits
 
-© Robin Simonklein
+© [Robin Simonklein](https://robinsimonklein.com)
