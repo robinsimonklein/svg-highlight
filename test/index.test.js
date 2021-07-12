@@ -12,25 +12,34 @@ const svgDOM = `
 </svg>
 `
 
+it('should place the element at the last position inside its parent', () => {
+  document.body.innerHTML = svgDOM
+  const element = document.querySelector('#item_2')
+  svgHighlight(element)
+  expect(element.nextElementSibling).toBeNull()
+})
+
+it('should only apply class on highlighted element', () => {
+  document.body.innerHTML = svgDOM
+  const element = document.querySelector('#item_2')
+  const otherElement = document.querySelector('#item_1')
+  otherElement.classList.add('svg-highlight')
+  svgHighlight(element)
+  expect(otherElement.classList.contains('svg-highlight')).not.toBe(true)
+  expect(element.classList.contains('svg-highlight')).toBe(true)
+  svgHighlight(otherElement)
+  expect(otherElement.classList.contains('svg-highlight')).toBe(true)
+  expect(element.classList.contains('svg-highlight')).not.toBe(true)
+})
+
+it('should return the highlighted element', () => {
+  document.body.innerHTML = svgDOM
+  const element = document.querySelector('#item_2')
+  const highlightedElement = svgHighlight(element)
+  expect(highlightedElement).toBe(element)
+})
+
 describe('options', () => {
-  it('should place the element at the last position inside its parent', () => {
-    document.body.innerHTML = svgDOM
-    const element = document.querySelector('#item_2')
-    svgHighlight(element)
-    expect(element.nextElementSibling).toBeNull()
-  })
-  it('should only apply class on highlighted element', () => {
-    document.body.innerHTML = svgDOM
-    const element = document.querySelector('#item_2')
-    const otherElement = document.querySelector('#item_1')
-    otherElement.classList.add('svg-highlight')
-    svgHighlight(element)
-    expect(otherElement.classList.contains('svg-highlight')).not.toBe(true)
-    expect(element.classList.contains('svg-highlight')).toBe(true)
-    svgHighlight(otherElement)
-    expect(otherElement.classList.contains('svg-highlight')).toBe(true)
-    expect(element.classList.contains('svg-highlight')).not.toBe(true)
-  })
   describe('customClass', () => {
     it('should add default class on element if customClass not specified', () => {
       document.body.innerHTML = svgDOM
@@ -38,6 +47,7 @@ describe('options', () => {
       svgHighlight(element)
       expect(element.classList.contains('svg-highlight')).toBe(true)
     })
+
     it('should add default class on element if customClass not specified', () => {
       document.body.innerHTML = svgDOM
       const element = document.querySelector('#item_2')

@@ -4,6 +4,7 @@
  * @param {SVGElement | HTMLElement} element - SVG element to highlight
  * @param {Object} [options] - Options
  * @param {string} [options.customClass] - Custom class for highlighted element
+ * @return {SVGElement}
  */
 export default function svgHighlight (
   element,
@@ -19,4 +20,5 @@ export default function svgHighlight (
     child.classList.remove(options.customClass)
   }
   element.classList.add(options.customClass)
+  return element
 }
