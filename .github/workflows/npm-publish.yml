@@ -5,7 +5,7 @@ name: Publish Package
 
 on:
   release:
-    types: [created]
+    types: [published]
 
 jobs:
   quality:
@@ -22,9 +22,28 @@ jobs:
       - run: npm run build
       - run: npm run lint
       - run: npm run test
+      
+  bump-version:
+    needs: quality
+    name: Bump package.json to ${{ github.event.release.tag_name }}
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14
+          
+      - name: Bump version (${{ github.event.release.tag_name }})
+        run: npm version from-git --git-tag-version false --commit-hooks false
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Bump version to ${{ github.event.release.tag_name }}
 
   publish-npm:
-    needs: quality
+    needs: [quality, bump-version]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -42,7 +61,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
   publish-gpr:
-    needs: quality
+    needs: [quality, bump-version]
     runs-on: ubuntu-latest
     permissions:
       contents: read
