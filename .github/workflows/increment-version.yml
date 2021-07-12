@@ -1,0 +1,27 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Increment version
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.ACTION_BOT_PAT }}
+          
+      - run: git config --global user.name '${{GITHUB_ACTOR}}'
+      - run: git config --global user.email '${{GITHUB_ACTOR}}@noreply.github.com'
+      
+      - name: Increment version (${{ github.event.release.tag_name }})
+        run: npm version ${{ github.event.release.tag_name }} -m "[RELEASE] %s" --git-tag-version false
+        
+      - name: Push changes
+        run: git push
+        
