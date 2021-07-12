@@ -16,8 +16,8 @@ jobs:
         with:
           token: ${{ secrets.ACTION_BOT_PAT }}
           
-      - run: git config --global user.name '${{env.GITHUB_ACTOR}}'
-      - run: git config --global user.email '${{env.GITHUB_ACTOR}}@noreply.github.com'
+      - run: git config --global user.name '$GITHUB_ACTOR'
+      - run: git config --global user.email '$GITHUB_ACTOR@noreply.github.com'
       
       - name: Increment version (${{ github.event.release.tag_name }})
         run: npm version ${{ github.event.release.tag_name }} -m "[RELEASE] %s" --git-tag-version false
