@@ -3,6 +3,8 @@
 .npmignore
 .editorconfig
 .github
+.eslintrc.js
+rollup.config.js
 
 node_modules/
 npm-debug.log
