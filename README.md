@@ -35,8 +35,7 @@ You can pass some options for advanced usage :
 ```javascript
 svgHighlight(yourSvgElement, {
     // The class you want to use on the highlighted element.
-    // (default: 'svg-highlight')
-    customClass: 'your-highlighted-class'
+    customClass: 'your-highlighted-class' // default: 'svg-highlight'
 })
 ```
 
